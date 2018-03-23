@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.rofor.NeventProj.MainActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/LoginBtn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="LaunchLogin"
+            android:text="Login UI" />
+
+        <Button
+            android:id="@+id/MapsBtn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="LaunchMaps"
+            android:text="Map UI" />
+
+        <Button
+            android:id="@+id/EventListBtn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="LaunchEventList"
+            android:text="Event List UI" />
+
+        <Button
+            android:id="@+id/CalendarBtn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="LaunchCalendar"
+            android:text="Calendar UI" />
+
+        <Button
+            android:id="@+id/EventCreationBtn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="LaunchEventCreation"
+            android:text="Event Creation UI" />
+    </LinearLayout>
+</android.support.constraint.ConstraintLayout>
