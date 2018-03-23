@@ -11,12 +11,11 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
 
-        <Button
-            android:id="@+id/LoginBtn"
+        <com.google.android.gms.common.SignInButton
+            android:id="@+id/sign_in_button"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:onClick="LaunchLogin"
-            android:text="Login UI" />
+            android:layout_height="wrap_content" />
+
 
         <Button
             android:id="@+id/MapsBtn"
