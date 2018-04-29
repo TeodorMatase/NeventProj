@@ -2,10 +2,13 @@ package com.example.rofor.NeventProj;
         import android.content.Intent;
         import android.support.v7.app.AppCompatActivity;
         import android.os.Bundle;
+        import android.util.EventLog;
         import android.util.Log;
         import android.view.View;
         import android.widget.Button;
         import android.widget.ListView;
+
+        import com.google.android.gms.maps.model.LatLng;
 
         import java.util.ArrayList;
 public class MainActivity extends AppCompatActivity {
@@ -22,8 +25,20 @@ public class MainActivity extends AppCompatActivity {
                     LaunchMaps(view);
                 }
             });
+            sampledatafill();
         }
-        //TODO: Integrate google auth, update EventList on login and on opening of app
+
+    private void sampledatafill() {
+        LatLng temp = new LatLng(30,30);
+        EventDataObj sample1 = new EventDataObj("creator@email.com","d1","n1",temp,"1:00","4/29/2018");
+        EventDataObj sample2 = new EventDataObj("creator@email.com","d2","n2",temp,"1:00","4/29/2018");
+        EventListObj.getInstance().addEvent(sample1);
+        EventListObj.getInstance().getEvent(0).attendeeEmails.add("sample1@gmail.com");
+        EventListObj.getInstance().addEvent(sample2);
+        EventListObj.getInstance().getEvent(1).attendeeEmails.add("sample2@gmail.com");
+        }
+
+    //TODO: Integrate google auth, update EventList on login and on opening of app
         public void LaunchLogin(View view){
             //Intent intent = new Intent(this, Login.class);
             //startActivity(intent);

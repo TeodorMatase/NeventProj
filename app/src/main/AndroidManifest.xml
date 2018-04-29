@@ -38,6 +38,7 @@
 
         <activity android:name=".EventListActivity" />
         <activity android:name=".EventCreation" />
+        <activity android:name=".EventDetailsActivity"/>
         <activity android:name=".Mapactivityview"></activity>
     </application>
 

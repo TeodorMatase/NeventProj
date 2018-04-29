@@ -10,12 +10,16 @@ import android.os.Bundle;
 import android.text.format.DateFormat;
 import android.view.View;
 import android.widget.DatePicker;
+import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.TimePicker;
+import android.widget.Toast;
 
 import com.google.android.gms.maps.model.LatLng;
 
 import java.util.Calendar;
+
+import static java.sql.DriverManager.println;
 
 public class EventCreation extends FragmentActivity {
     static TextView timeText;
@@ -85,8 +89,10 @@ public class EventCreation extends FragmentActivity {
     public void createEvent(View v){
         LatLng temp = new LatLng(30,30);
         //TODO: Get LatLNG from Google Maps, get current user to substitute for "creator@email.com"
-        EventDataObj newEv = new EventDataObj("creator@email.com",findViewById(R.id.eventCreation_eventDescription).toString(),findViewById(R.id.eventCreation_eventName).toString(),temp,timeText.getText().toString(),dateText.getText().toString());
+        EditText desctxt = findViewById(R.id.eventCreation_eventDescription);
+        EditText nametxt = findViewById(R.id.eventCreation_eventName);
+        EventDataObj newEv = new EventDataObj("creator@email.com",desctxt.getText().toString(),nametxt.getText().toString(),temp,timeText.getText().toString(),dateText.getText().toString());
         EventListObj.getInstance().addEvent(newEv);
-
+        Toast.makeText(getBaseContext(),"Event Created Successfully", Toast.LENGTH_SHORT).show();
     }
 }

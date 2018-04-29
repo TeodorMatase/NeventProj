@@ -28,4 +28,16 @@ public class EventListObj {
     public void deleteEvent(EventDataObj t ){
         t.eventDeletion();
     }
+
+    public EventDataObj getEvent(int index){
+        return allEvents.get(index);
+    }
+
+    public void updateEvent(int index, EventDataObj t){
+        allEvents.get(index).updateEvent(t);
+    }
+
+    public int size(){
+        return allEvents.size();
+    }
 }

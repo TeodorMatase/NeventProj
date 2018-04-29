@@ -24,6 +24,8 @@ public class EventDataObj {
         this.Description = Desc;
         this.date = date;
         this.time = time;
+        attendeeEmails = new ArrayList<>();
+        attendeeEmails.add(creatorEmail);
         //Create Event JSON Object
         //Send event JSON Object
         //Verify event created successfully
@@ -66,7 +68,7 @@ public class EventDataObj {
         //
     }
 
-    public boolean updateEvent(){
+    public boolean updateEvent(EventDataObj newDetails){
         //Similar to constructor - different method on GAE to signify overwriting old event data with new event data, DO NOT MAKE A NEW EVENT OBJECT)
         //
         return true;

@@ -7,7 +7,7 @@
     tools:context="com.example.rofor.NeventProj.EventCreation">
 
     <EditText
-        android:id="@+id/eventDetails-eventName"
+        android:id="@+id/eventCreation-eventName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="8dp"
@@ -79,7 +79,7 @@
         app:layout_constraintBottom_toTopOf="@+id/eventCreation-eventTime"
         app:layout_constraintEnd_toStartOf="@+id/eventCreation-latitudeTEMP" />
 
-    <TextView
+    <EditText
         android:id="@+id/eventCreation-latitudeTEMP"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -89,7 +89,7 @@
         app:layout_constraintBottom_toTopOf="@+id/eventCreation-eventDescription"
         app:layout_constraintEnd_toEndOf="parent" />
 
-    <TextView
+    <EditText
         android:id="@+id/eventCreation-LongitudeTEMP"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -102,11 +102,14 @@
         android:id="@+id/eventCreation-ConfirmBTN"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="46dp"
-        android:layout_marginTop="1dp"
+        android:layout_marginEnd="4dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
         android:onClick="createEvent"
         android:text="Create"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/eventCreation-eventDescription" />
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </android.support.constraint.ConstraintLayout>
