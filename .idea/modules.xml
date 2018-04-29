@@ -2,8 +2,10 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://C:\Users\ajama\AndroidStudioProjects\NeventProj\ListviewSample.iml" filepath="C:\Users\ajama\AndroidStudioProjects\NeventProj\ListviewSample.iml" />
       <module fileurl="file://$PROJECT_DIR$/NeventProj.iml" filepath="$PROJECT_DIR$/NeventProj.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://C:\Users\ajama\AndroidStudioProjects\NeventProj\app\app.iml" filepath="C:\Users\ajama\AndroidStudioProjects\NeventProj\app\app.iml" />
     </modules>
   </component>
 </project>

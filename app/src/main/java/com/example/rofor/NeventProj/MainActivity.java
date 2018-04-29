@@ -14,6 +14,7 @@ public class MainActivity extends AppCompatActivity {
         protected void onCreate(Bundle savedInstanceState) {
             super.onCreate(savedInstanceState);
             setContentView(R.layout.activity_main);
+
             Button mapbtn = findViewById(R.id.MapsBtn);
             mapbtn.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -34,8 +35,8 @@ public class MainActivity extends AppCompatActivity {
         }
 
         public void LaunchMaps(View view){
-            //Intent intent = new Intent(this, MapsActivity.class);
-            //startActivity(intent);
+            Intent intent = new Intent(this, Mapactivityview.class);
+            startActivity(intent);
         }
 
         public void LaunchEventList(View view){
