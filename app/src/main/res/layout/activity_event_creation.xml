@@ -6,4 +6,107 @@
     android:layout_height="match_parent"
     tools:context="com.example.rofor.NeventProj.EventCreation">
 
+    <EditText
+        android:id="@+id/eventDetails-eventName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="56dp"
+        android:ems="10"
+        android:hint="Event Name"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.431"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/eventCreation-eventDescription"
+        android:layout_width="237dp"
+        android:layout_height="194dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="88dp"
+        android:ems="10"
+        android:hint="Event Description"
+        android:inputType="textPersonName"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/eventDetails-eventName" />
+
+    <TextView
+        android:id="@+id/eventCreation-eventDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="9dp"
+        android:text="TextView"
+        app:layout_constraintBottom_toBottomOf="@+id/eventCreation-eventTime"
+        app:layout_constraintEnd_toEndOf="@+id/eventDatePickerBtn"
+        app:layout_constraintTop_toTopOf="@+id/eventCreation-eventTime" />
+
+    <TextView
+        android:id="@+id/eventCreation-eventTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="7dp"
+        android:layout_marginStart="15dp"
+        android:text="TextView"
+        app:layout_constraintBottom_toTopOf="@+id/eventCreation-latitudeTEMP"
+        app:layout_constraintStart_toStartOf="@+id/eventTimePickerbtn" />
+
+    <Button
+        android:id="@+id/eventDatePickerBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_marginBottom="8dp"
+        android:onClick="showDatePickerDialog"
+        android:text="Date"
+        app:layout_constraintBottom_toTopOf="@+id/eventCreation-eventDate"
+        app:layout_constraintEnd_toStartOf="@+id/eventDetails-eventName"
+        app:layout_constraintStart_toStartOf="@+id/eventDetails-eventName" />
+
+    <Button
+        android:id="@+id/eventTimePickerbtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:layout_marginEnd="28dp"
+        android:onClick="showTimePickerDialog"
+        android:text="Time"
+        app:layout_constraintBottom_toTopOf="@+id/eventCreation-eventTime"
+        app:layout_constraintEnd_toStartOf="@+id/eventCreation-latitudeTEMP" />
+
+    <TextView
+        android:id="@+id/eventCreation-latitudeTEMP"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="27dp"
+        android:layout_marginEnd="8dp"
+        android:text="Latitude"
+        app:layout_constraintBottom_toTopOf="@+id/eventCreation-eventDescription"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <TextView
+        android:id="@+id/eventCreation-LongitudeTEMP"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:text="Longitude"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/eventCreation-ConfirmBTN"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="46dp"
+        android:layout_marginTop="1dp"
+        android:onClick="createEvent"
+        android:text="Create"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/eventCreation-eventDescription" />
+
 </android.support.constraint.ConstraintLayout>

@@ -23,7 +23,7 @@ public class MainActivity extends AppCompatActivity {
                 }
             });
         }
-        //TODO: Integrate google auth
+        //TODO: Integrate google auth, update EventList on login and on opening of app
         public void LaunchLogin(View view){
             //Intent intent = new Intent(this, Login.class);
             //startActivity(intent);

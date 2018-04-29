@@ -1,0 +1,31 @@
+package com.example.rofor.NeventProj;
+
+import java.util.ArrayList;
+
+public class EventListObj {
+    private static EventListObj INSTANCE = null;
+
+    private ArrayList<EventDataObj> allEvents;
+
+    // other instance variables can be here
+
+    private EventListObj(){
+        allEvents = new ArrayList<>();
+    };
+
+    public static EventListObj getInstance() {
+        if (INSTANCE == null) {
+            INSTANCE = new EventListObj();
+        }
+        return(INSTANCE);
+    }
+        // other instance methods can follow
+
+    public void addEvent(EventDataObj t){
+        allEvents.add(t);
+    }
+
+    public void deleteEvent(EventDataObj t ){
+        t.eventDeletion();
+    }
+}

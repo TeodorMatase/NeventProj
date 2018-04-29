@@ -6,33 +6,45 @@ import java.util.ArrayList;
 import java.util.Date;
 
 public class EventDataObj {
-
+//ALL GAE INTERACTION IS DONE THROUGH THE EVENT CLASS AND ITS METHODS
     String EventName;
     String Description;
-    Date date;
-
+    String date;
+    String time;
     String creatorEmail;
     String eventKey;
     ArrayList<String> attendeeEmails;
     LatLng EventLocation;
 
 
-    public EventDataObj(String creator, String Desc, String name, LatLng location){
+    public EventDataObj(String creator, String Desc, String name, LatLng location, String time, String date){
         this.EventLocation = location;
         this.EventName = name;
         this.creatorEmail = creator;
         this.Description = Desc;
+        this.date = date;
+        this.time = time;
         //Create Event JSON Object
         //Send event JSON Object
         //Verify event created successfully
         //Update eventKey with response from GAE
     }
 
-    public boolean eventDeletion(){
-        //Ensure current google auth id matches event creator email(android)
+    public void eventDeletion(){
+        //Will call deletion method on GAE with eventKey and user email details
         //call delete method using eventKey;
-        return true;
-
+        String tempCreator = "creator@email.com";
+        if(tempCreator.equals(creatorEmail)){
+            //delete event form GAE datstore
+            EventListObj.getInstance().deleteEvent(this);
+        }
+        else{
+            String tempInvited = "invited@email.com";
+            //delete user from invited list
+            if(attendeeEmails.contains(tempInvited)){
+                attendeeEmails.remove(tempInvited);
+            }
+        }
     }
 
     public boolean invitePerson(String email){

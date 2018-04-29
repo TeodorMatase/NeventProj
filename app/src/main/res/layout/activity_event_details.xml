@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.rofor.NeventProj.EventCreation"
+    tools:layout_editor_absoluteY="81dp">
+
+    <EditText
+        android:id="@+id/eventDetails-eventName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="22dp"
+        android:layout_marginStart="23dp"
+        android:layout_marginTop="56dp"
+        android:ems="10"
+        android:hint="Event Name"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="@+id/eventDetails-eventDescription"
+        app:layout_constraintStart_toStartOf="@+id/eventDetails-eventDate"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/eventDetails-eventDescription"
+        android:layout_width="237dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="41dp"
+        android:layout_marginTop="46dp"
+        android:ems="10"
+        android:hint="Event Description"
+        android:inputType="textPersonName"
+        app:layout_constraintBottom_toTopOf="@+id/eventDetails-LongitudeTEMP"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/eventDetails-latitudeTEMP" />
+
+    <TextView
+        android:id="@+id/eventDetails-eventDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="51dp"
+        android:text="TextView"
+        app:layout_constraintBottom_toBottomOf="@+id/eventDetails-eventTime"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/eventDetails-eventTime" />
+
+    <TextView
+        android:id="@+id/eventDetails-eventTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="6dp"
+        android:layout_marginEnd="43dp"
+        android:text="TextView"
+        app:layout_constraintBottom_toTopOf="@+id/eventDetails-latitudeTEMP"
+        app:layout_constraintEnd_toStartOf="@+id/eventDetails-latitudeTEMP" />
+
+    <TextView
+        android:id="@+id/eventDetails-latitudeTEMP"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginTop="204dp"
+        android:text="Latitude"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/eventDetails-LongitudeTEMP"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="7dp"
+        android:text="Longitude"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</android.support.constraint.ConstraintLayout>
