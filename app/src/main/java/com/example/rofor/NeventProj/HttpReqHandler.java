@@ -25,15 +25,15 @@ public class HttpReqHandler {
             con.setDoInput(true);
             con.setDoOutput(true);
             con.setRequestProperty("Content-Type","application/x-www-form-urlencoded");
-
-            int responseCode = con.getResponseCode();
-            if(responseCode == HttpURLConnection.HTTP_OK){
+            con.connect();
+            //int responseCode = con.getResponseCode();
+            //if(responseCode == HttpURLConnection.HTTP_OK){
                 String txt;
                 BufferedReader br = new BufferedReader(new InputStreamReader(con.getInputStream()));
                 while((txt = br.readLine()) != null){
                     response+=txt;
                 }
-            }
+           // }
 
 
         }

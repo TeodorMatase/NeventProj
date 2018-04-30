@@ -70,12 +70,16 @@ public class EventDetailsActivity extends AppCompatActivity {
         TextView eventTime = findViewById(R.id.eventDetails_eventTime);
         TextView eventLati = findViewById(R.id.eventDetails_latitudeTEMP);
         TextView eventLong = findViewById(R.id.eventDetails_LongitudeTEMP);
+        TextView eventTemp = findViewById(R.id.eventDetails_WeatherTemp);
+        TextView eventCond = findViewById(R.id.eventDetails_WeatherConditions);
         eventName.setText(EventListObj.getInstance().getEvent(position).EventName);
         eventDesc.setText(EventListObj.getInstance().getEvent(position).Description);
         eventDate.setText(EventListObj.getInstance().getEvent(position).date);
         eventTime.setText(EventListObj.getInstance().getEvent(position).time);
         eventLati.setText(String.valueOf(EventListObj.getInstance().getEvent(position).EventLocation.latitude));
         eventLong.setText(String.valueOf(EventListObj.getInstance().getEvent(position).EventLocation.longitude));
+        eventTemp.setText(EventListObj.getInstance().getEvent(position).weatherTemperature);
+        eventCond.setText(EventListObj.getInstance().getEvent(position).weatherCondition);
     }
 
     public void inviteAttendee(View v){

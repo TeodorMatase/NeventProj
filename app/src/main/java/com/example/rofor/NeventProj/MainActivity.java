@@ -10,7 +10,15 @@ package com.example.rofor.NeventProj;
 
         import com.google.android.gms.maps.model.LatLng;
 
+        import java.text.ParseException;
+        import java.text.SimpleDateFormat;
         import java.util.ArrayList;
+        import java.util.Calendar;
+        import java.util.Date;
+        import java.util.GregorianCalendar;
+        import java.util.Timer;
+        import java.util.TimerTask;
+
 public class MainActivity extends AppCompatActivity {
 
         @Override
@@ -30,12 +38,13 @@ public class MainActivity extends AppCompatActivity {
 
     private void sampledatafill() {
         LatLng temp = new LatLng(30,30);
-        EventDataObj sample1 = new EventDataObj("creator@email.com","d1","n1",temp,"1:00","4/29/2018");
-        EventDataObj sample2 = new EventDataObj("creator@email.com","d2","n2",temp,"1:00","4/29/2018");
+        EventDataObj sample1 = new EventDataObj("creator@email.com","d1","n1",temp,"1:00","5/05/2018");
+        EventDataObj sample2 = new EventDataObj("creator@email.com","d2","n2",temp,"1:00","5/05/2018");
         EventListObj.getInstance().addEvent(sample1);
         EventListObj.getInstance().getEvent(0).attendeeEmails.add("sample1@gmail.com");
         EventListObj.getInstance().addEvent(sample2);
         EventListObj.getInstance().getEvent(1).attendeeEmails.add("sample2@gmail.com");
+
         }
 
     //TODO: Integrate google auth, update EventList on login and on opening of app

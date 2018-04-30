@@ -66,7 +66,7 @@ public class Mapactivityview extends AppCompatActivity implements OnMapReadyCall
     }
 
     public String estimateTimeToLeave(LatLng dest){
-        //TODO
+        //TODO make algorithm
         return "default_time";
     }
 

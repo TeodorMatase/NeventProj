@@ -50,7 +50,21 @@ public class EventCreation extends FragmentActivity {
 
         public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
            //Create Date object and add to eventObject
-            String tempOUT = String.valueOf(hourOfDay) + ":" + String.valueOf(minute);
+            String hour;
+            String min;
+            if(hourOfDay < 10){
+                hour = "0" + String.valueOf(hourOfDay);
+            }
+            else{
+                hour = String.valueOf(hourOfDay);
+            }
+            if(minute < 10){
+                min = "0" + String.valueOf(minute);
+            }
+            else{
+                min = String.valueOf(minute);
+            }
+            String tempOUT = hour + ":" + min;
             timeText.setText(tempOUT);
         }
     }
@@ -71,8 +85,23 @@ public class EventCreation extends FragmentActivity {
         }
 
         public void onDateSet(DatePicker view, int year, int month, int day) {
-            String tempOUT = String.valueOf(month) + "/" + String.valueOf(day) + "/" + String.valueOf(year);
-            dateText.setText(tempOUT);
+            String tempOut;
+            String mo = "";
+            String da = "";
+            if(month < 10){
+                mo = "0" + String.valueOf(month);
+            }
+            else{
+                mo = String.valueOf(month);
+            }
+            if(day < 10){
+                da = "0" + String.valueOf(day);
+            }
+            else{
+                da = String.valueOf(day);
+            }
+            tempOut = mo + "/" + da + "/" + String.valueOf(year);
+            dateText.setText(tempOut);
         }
     }
 
