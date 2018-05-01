@@ -7,8 +7,15 @@ package com.example.rofor.NeventProj;
         import android.view.View;
         import android.widget.Button;
         import android.widget.ListView;
+        import android.widget.TextView;
 
+        import com.google.android.gms.auth.api.signin.GoogleSignIn;
+        import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
+        import com.google.android.gms.auth.api.signin.GoogleSignInClient;
+        import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
+        import com.google.android.gms.common.api.ApiException;
         import com.google.android.gms.maps.model.LatLng;
+        import com.google.android.gms.tasks.Task;
 
         import java.text.ParseException;
         import java.text.SimpleDateFormat;
@@ -20,6 +27,10 @@ package com.example.rofor.NeventProj;
         import java.util.TimerTask;
 
 public class MainActivity extends AppCompatActivity {
+
+    private GoogleSignInClient mGoogleSignInClient;
+    private Button signInButton;
+    private TextView userName;
 
         @Override
         protected void onCreate(Bundle savedInstanceState) {
@@ -33,6 +44,14 @@ public class MainActivity extends AppCompatActivity {
                     LaunchMaps(view);
                 }
             });
+
+            GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
+                    .requestIdToken(getString(R.string.server_client_id))
+                    .build();
+            mGoogleSignInClient = GoogleSignIn.getClient(this, gso);
+            userName = (TextView) findViewById(R.id.user_name);
+
+
             sampledatafill();
         }
 
@@ -49,8 +68,10 @@ public class MainActivity extends AppCompatActivity {
 
     //TODO: Integrate google auth, update EventList on login and on opening of app
         public void LaunchLogin(View view){
-            //Intent intent = new Intent(this, Login.class);
-            //startActivity(intent);
+            Log.w("success", "LaunchLogin");
+            signInButton = (Button) view.findViewById(R.id.sign_in_button);
+            Intent intent = mGoogleSignInClient.getSignInIntent();
+            startActivityForResult(intent, 77);
         }
 
         public void LaunchCalendar(View view){
@@ -72,6 +93,39 @@ public class MainActivity extends AppCompatActivity {
             Intent intent = new Intent(this, EventCreation.class);
             startActivity(intent);
         }
+
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+
+        // Result returned from launching the Intent from GoogleSignInClient.getSignInIntent(...);
+        if (requestCode == 77) {
+            // The Task returned from this call is always completed, no need to attach
+            // a listener.
+            Task<GoogleSignInAccount> task = GoogleSignIn.getSignedInAccountFromIntent(data);
+            handleSignInResult(task);
+        }
+    }
+
+    private void handleSignInResult(Task<GoogleSignInAccount> completedTask) {
+        try {
+            GoogleSignInAccount account = completedTask.getResult(ApiException.class);
+
+            // Signed in successfully, show authenticated UI.
+            Log.w("success", "it worked");
+            updateUI(account.getDisplayName());
+        } catch (ApiException e) {
+            // The ApiException status code indicates the detailed failure reason.
+            // Please refer to the GoogleSignInStatusCodes class reference for more information.
+            Log.w("error", "signInResult:failed code=" + e.getStatusCode());
+            //updateUI(null);
+        }
+    }
+
+    private void updateUI(String name){
+        signInButton.setVisibility(View.GONE);
+        userName.setVisibility(View.VISIBLE);
+        userName.setText("Welcome, " + name + "!");
+    }
 
     }
 

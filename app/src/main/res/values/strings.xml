@@ -3,4 +3,5 @@
     <string name="title_activity_maps">Map</string>
     <string name="geokey">AIzaSyAr4RGylZtbX_o4cOrxXvaTa7s_q6TowHY</string>
     <string name="mapkey">AIzaSyC7Wth964RQ_EXQ1AO6HOwQ337MjY822_Y</string>
+    <string name="server_client_id">860614057970-jp70qm92h2kvl8u1i9iaptrlhhg46du1.apps.googleusercontent.com</string>
 </resources>

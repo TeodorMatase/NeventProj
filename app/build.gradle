@@ -3,7 +3,7 @@ apply plugin: 'com.android.application'
 android {
     compileSdkVersion 26
     defaultConfig {
-        applicationId "com.example.rofor.listviewsample"
+        applicationId "com.example.rofor.NeventProj"
         minSdkVersion 19
         targetSdkVersion 26
         versionCode 1

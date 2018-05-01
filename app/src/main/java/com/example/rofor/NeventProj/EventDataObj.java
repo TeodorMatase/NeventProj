@@ -49,7 +49,7 @@ public class EventDataObj {
         this.Description = Desc;
         attendeeEmails = new ArrayList<>();
         attendeeEmails.add(creatorEmail);
-        updateWeather();
+      //  updateWeather();
         //Create Event JSON Object
         //Send event JSON Object
         //Verify event created successfully
