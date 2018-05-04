@@ -17,6 +17,7 @@ import java.util.Date;
 import java.util.GregorianCalendar;
 import java.util.SimpleTimeZone;
 import java.util.TimeZone;
+import java.util.regex.Pattern;
 
 public class EventDataObj {
 //ALL GAE INTERACTION IS DONE THROUGH THE EVENT CLASS AND ITS METHODS
@@ -56,6 +57,10 @@ public class EventDataObj {
         //Update eventKey with response from GAE
     }
 
+    public EventDataObj(){
+
+    }
+
     private Date dateTimeFormatter(String t, String d) {
         String dateString = d + " " + t;
         SimpleDateFormat dateFormat = new SimpleDateFormat("MM/dd/yyyy HH:mm");
@@ -86,12 +91,29 @@ public class EventDataObj {
         }
     }
 
-    public boolean invitePerson(String email){
+    public static boolean isValid(String email)
+    {
+        String emailRegex = "^[a-zA-Z0-9_+&*-]+(?:\\."+
+                "[a-zA-Z0-9_+&*-]+)*@" +
+                "(?:[a-zA-Z0-9-]+\\.)+[a-z" +
+                "A-Z]{2,7}$";
+
+        Pattern p = Pattern.compile(emailRegex);
+        if (email == null)
+            return false;
+        return p.matcher(email).matches();
+    }
+
+    public boolean invitePerson(String email) throws IllegalArgumentException{
         //Update event object with new invitation list
         //use updateEvent() method to send event object to GAE
         //GAE searches through the invitation list to see if any emails have not yet been invited and then invites them
+        if(!isValid(email)){
+            throw new IllegalArgumentException();
+        }
         return true;
     }
+
 
     public void updateWeather(){
 

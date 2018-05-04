@@ -19,6 +19,10 @@ public class ListItem {
         this.Date = d;
     }
 
+    public ListItem(){
+
+    }
+
     public String getTitle() {
         return Title;
     }
