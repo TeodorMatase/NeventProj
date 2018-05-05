@@ -96,7 +96,7 @@ public class EventDetailsActivity extends AppCompatActivity {
     public void inviteAttendee(View v){
         //TODO: get currently logged in user and assign their email to the "currentemail" variable
         EditText invited = findViewById(R.id.attendeeEmail);
-        String currentemail = "creator@email.com";
+        String currentemail = MainActivity.userEmail;
         if(currentemail.equals(EventListObj.getInstance().getEvent(position).creatorEmail)){
             EventListObj.getInstance().getEvent(position).invitePerson(invited.getText().toString());
             EventListObj.getInstance().getEvent(position).attendeeEmails.add(invited.getText().toString());

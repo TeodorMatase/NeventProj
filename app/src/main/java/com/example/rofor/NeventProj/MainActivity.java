@@ -72,7 +72,7 @@ public class MainActivity extends AppCompatActivity {
     public static LatLng currentLocation;
     private LocationCallback mLocationCallback;
     private LocationRequest mLocationRequest;
-    public String userEmail;
+    public static String userEmail;
 
         @Override
         protected void onCreate(Bundle savedInstanceState) {
@@ -85,6 +85,7 @@ public class MainActivity extends AppCompatActivity {
 
             GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
                     .requestIdToken(getString(R.string.server_client_id))
+                    .requestEmail()
                     .build();
             mGoogleSignInClient = GoogleSignIn.getClient(this, gso);
             userName = (TextView) findViewById(R.id.user_name);
@@ -128,8 +129,9 @@ public class MainActivity extends AppCompatActivity {
                         return;
                     }
                     for (Location location : locationResult.getLocations()) {
-
-                        EventListObj.getInstance().setList(getInvitedEvents());
+                        if(MainActivity.userEmail != null) {
+                     //       EventListObj.getInstance().setList(getInvitedEvents());
+                        }
 
                         currentLocation = new LatLng(location.getLatitude(), location.getLongitude());
                         Log.d("list", Double.toString(currentLocation.latitude));
@@ -195,7 +197,7 @@ public class MainActivity extends AppCompatActivity {
 
             // Signed in successfully, show authenticated UI.
             Log.w("success", "it worked");
-            updateUI(account.getDisplayName());
+            updateUI(account.getEmail());
             userEmail = account.getEmail();
         } catch (ApiException e) {
             // The ApiException status code indicates the detailed failure reason.
@@ -374,12 +376,41 @@ public class MainActivity extends AppCompatActivity {
 
     public ArrayList<EventDataObj> getInvitedEvents(){
         Gson gson = new Gson();
-        ArrayList<EventDataObj> ListOfEventsUserIsInvitedTo = gson.fromJson(apiCall(fromServerMethod(userEmail)), new TypeToken<ArrayList<EventDataObj>>() {}.getType());
+        Log.d("err", MainActivity.userEmail);
+
+        ArrayList<EventDataObj> ListOfEventsUserIsInvitedTo = gson.fromJson(apiPostCall(fromServerMethod(MainActivity.userEmail)), new TypeToken<ArrayList<EventDataObj>>() {}.getType());
         return ListOfEventsUserIsInvitedTo;
     }
 
+    private String apiPostCall(String url){
+        RequestQueue queue = Volley.newRequestQueue(this);
+        String result = "";
+        StringRequest stringRequest = new StringRequest(Request.Method.POST, url,
+                new Response.Listener<String>() {
 
+                    @Override
+                    public void onResponse(String response) {
+                        try {
+                            sharedResponse(response);
+                        }
+                        catch(Exception e){
+                            Log.d("error", "JSONerror");
+                        }
+                    }
+                }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                Log.d("error", "Error!");
+            }
+        });
+        // Add the request to the RequestQueue.
+        queue.add(stringRequest);
 
+        SharedPreferences m = PreferenceManager.getDefaultSharedPreferences(this);
+        result = m.getString("Response", "");
+
+        return result;
+    }
 
 }
 

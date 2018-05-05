@@ -24,6 +24,8 @@ import static java.sql.DriverManager.println;
 public class EventCreation extends FragmentActivity {
     static TextView timeText;
     static TextView dateText;
+    EditText lat;
+    EditText lon;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,6 +33,8 @@ public class EventCreation extends FragmentActivity {
         setContentView(R.layout.activity_event_creation);
         timeText = findViewById(R.id.eventCreation_eventTime);
         dateText = findViewById(R.id.eventCreation_eventDate);
+        lat = (EditText) findViewById(R.id.eventCreation_latitudeTEMP);
+        lon = (EditText) findViewById(R.id.eventCreation_LongitudeTEMP);
     }
 
     public static class TimePickerFragment extends DialogFragment
@@ -116,11 +120,13 @@ public class EventCreation extends FragmentActivity {
     }
 
     public void createEvent(View v){
-        LatLng temp = new LatLng(30,30);
-        //TODO: Get LatLNG from Google Maps, get current user to substitute for "creator@email.com"
+        double x = Double.parseDouble(lat.getText().toString());
+        double y = Double.parseDouble(lon.getText().toString());
+        LatLng temp = new LatLng(x,y);
+
         EditText desctxt = findViewById(R.id.eventCreation_eventDescription);
         EditText nametxt = findViewById(R.id.eventCreation_eventName);
-        EventDataObj newEv = new EventDataObj("creator@email.com",desctxt.getText().toString(),nametxt.getText().toString(),temp,timeText.getText().toString(),dateText.getText().toString());
+        EventDataObj newEv = new EventDataObj(MainActivity.userEmail,desctxt.getText().toString(),nametxt.getText().toString(),temp,timeText.getText().toString(),dateText.getText().toString());
         EventListObj.getInstance().addEvent(newEv);
         Toast.makeText(getBaseContext(),"Event Created Successfully", Toast.LENGTH_SHORT).show();
     }

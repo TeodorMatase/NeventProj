@@ -1,4 +1,119 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"-->
+    <!--xmlns:app="http://schemas.android.com/apk/res-auto"-->
+    <!--xmlns:tools="http://schemas.android.com/tools"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="match_parent"-->
+    <!--tools:context="com.example.rofor.NeventProj.EventCreation">-->
+
+    <!--<EditText-->
+        <!--android:id="@+id/eventCreation-eventName"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_marginEnd="8dp"-->
+        <!--android:layout_marginStart="8dp"-->
+        <!--android:layout_marginTop="56dp"-->
+        <!--android:ems="10"-->
+        <!--android:hint="Event Name"-->
+        <!--android:inputType="textPersonName"-->
+        <!--app:layout_constraintEnd_toEndOf="parent"-->
+        <!--app:layout_constraintHorizontal_bias="0.431"-->
+        <!--app:layout_constraintStart_toStartOf="parent"-->
+        <!--app:layout_constraintTop_toTopOf="parent" />-->
+
+    <!--<EditText-->
+        <!--android:id="@+id/eventCreation-eventDescription"-->
+        <!--android:layout_width="237dp"-->
+        <!--android:layout_height="194dp"-->
+        <!--android:layout_marginBottom="8dp"-->
+        <!--android:layout_marginEnd="8dp"-->
+        <!--android:layout_marginStart="8dp"-->
+        <!--android:layout_marginTop="88dp"-->
+        <!--android:ems="10"-->
+        <!--android:hint="Event Description"-->
+        <!--android:inputType="textPersonName"-->
+        <!--app:layout_constraintBottom_toBottomOf="parent"-->
+        <!--app:layout_constraintEnd_toEndOf="parent"-->
+        <!--app:layout_constraintStart_toStartOf="parent"-->
+        <!--app:layout_constraintTop_toBottomOf="@+id/eventDetails-eventName" />-->
+
+    <!--<TextView-->
+        <!--android:id="@+id/eventCreation-eventDate"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_marginEnd="9dp"-->
+        <!--android:text="TextView"-->
+        <!--app:layout_constraintBottom_toBottomOf="@+id/eventCreation-eventTime"-->
+        <!--app:layout_constraintEnd_toEndOf="@+id/eventDatePickerBtn"-->
+        <!--app:layout_constraintTop_toTopOf="@+id/eventCreation-eventTime" />-->
+
+    <!--<TextView-->
+        <!--android:id="@+id/eventCreation-eventTime"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_marginBottom="7dp"-->
+        <!--android:layout_marginStart="15dp"-->
+        <!--android:text="TextView"-->
+        <!--app:layout_constraintBottom_toTopOf="@+id/eventCreation-latitudeTEMP"-->
+        <!--app:layout_constraintStart_toStartOf="@+id/eventTimePickerbtn" />-->
+
+    <!--<Button-->
+        <!--android:id="@+id/eventDatePickerBtn"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="0dp"-->
+        <!--android:layout_marginBottom="8dp"-->
+        <!--android:onClick="showDatePickerDialog"-->
+        <!--android:text="Date"-->
+        <!--app:layout_constraintBottom_toTopOf="@+id/eventCreation-eventDate"-->
+        <!--app:layout_constraintEnd_toStartOf="@+id/eventDetails-eventName"-->
+        <!--app:layout_constraintStart_toStartOf="@+id/eventDetails-eventName" />-->
+
+    <!--<Button-->
+        <!--android:id="@+id/eventTimePickerbtn"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_marginBottom="16dp"-->
+        <!--android:layout_marginEnd="28dp"-->
+        <!--android:onClick="showTimePickerDialog"-->
+        <!--android:text="Time"-->
+        <!--app:layout_constraintBottom_toTopOf="@+id/eventCreation-eventTime"-->
+        <!--app:layout_constraintEnd_toStartOf="@+id/eventCreation-latitudeTEMP" />-->
+
+    <!--<EditText-->
+        <!--android:id="@+id/eventCreation-latitudeTEMP"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_marginBottom="27dp"-->
+        <!--android:layout_marginEnd="8dp"-->
+        <!--android:text="Latitude"-->
+        <!--app:layout_constraintBottom_toTopOf="@+id/eventCreation-eventDescription"-->
+        <!--app:layout_constraintEnd_toEndOf="parent" />-->
+
+    <!--<EditText-->
+        <!--android:id="@+id/eventCreation-LongitudeTEMP"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_marginBottom="8dp"-->
+        <!--android:text="Longitude"-->
+        <!--app:layout_constraintBottom_toBottomOf="parent"-->
+        <!--app:layout_constraintStart_toStartOf="parent" />-->
+
+    <!--<Button-->
+        <!--android:id="@+id/eventCreation-ConfirmBTN"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_marginEnd="4dp"-->
+        <!--android:layout_marginStart="8dp"-->
+        <!--android:layout_marginTop="8dp"-->
+        <!--android:onClick="createEvent"-->
+        <!--android:text="Create"-->
+        <!--app:layout_constraintEnd_toEndOf="parent"-->
+        <!--app:layout_constraintHorizontal_bias="0.0"-->
+        <!--app:layout_constraintStart_toStartOf="parent"-->
+        <!--app:layout_constraintTop_toTopOf="parent" />-->
+
+<!--</android.support.constraint.ConstraintLayout>-->
+<!--<?xml version="1.0" encoding="utf-8"?>-->
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -10,12 +125,14 @@
         android:id="@+id/eventCreation-eventName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="27dp"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="56dp"
         android:ems="10"
         android:hint="Event Name"
         android:inputType="textPersonName"
+        app:layout_constraintBottom_toTopOf="@+id/eventDatePickerBtn"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.431"
         app:layout_constraintStart_toStartOf="parent"
@@ -41,62 +158,75 @@
         android:id="@+id/eventCreation-eventDate"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="9dp"
         android:text="TextView"
-        app:layout_constraintBottom_toBottomOf="@+id/eventCreation-eventTime"
-        app:layout_constraintEnd_toEndOf="@+id/eventDatePickerBtn"
-        app:layout_constraintTop_toTopOf="@+id/eventCreation-eventTime" />
+        tools:layout_editor_absoluteX="69dp"
+        tools:layout_editor_absoluteY="212dp" />
 
     <TextView
         android:id="@+id/eventCreation-eventTime"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="7dp"
-        android:layout_marginStart="15dp"
         android:text="TextView"
-        app:layout_constraintBottom_toTopOf="@+id/eventCreation-latitudeTEMP"
-        app:layout_constraintStart_toStartOf="@+id/eventTimePickerbtn" />
+        tools:layout_editor_absoluteX="202dp"
+        tools:layout_editor_absoluteY="212dp" />
 
     <Button
         android:id="@+id/eventDatePickerBtn"
         android:layout_width="wrap_content"
-        android:layout_height="0dp"
-        android:layout_marginBottom="8dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:layout_marginStart="72dp"
+        android:layout_marginTop="8dp"
         android:onClick="showDatePickerDialog"
         android:text="Date"
         app:layout_constraintBottom_toTopOf="@+id/eventCreation-eventDate"
         app:layout_constraintEnd_toStartOf="@+id/eventDetails-eventName"
-        app:layout_constraintStart_toStartOf="@+id/eventDetails-eventName" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/eventCreation-eventName" />
 
     <Button
         android:id="@+id/eventTimePickerbtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="16dp"
-        android:layout_marginEnd="28dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="109dp"
+        android:layout_marginStart="99dp"
+        android:layout_marginTop="8dp"
         android:onClick="showTimePickerDialog"
         android:text="Time"
         app:layout_constraintBottom_toTopOf="@+id/eventCreation-eventTime"
-        app:layout_constraintEnd_toStartOf="@+id/eventCreation-latitudeTEMP" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/eventDatePickerBtn"
+        app:layout_constraintTop_toBottomOf="@+id/eventCreation-eventName" />
 
     <EditText
         android:id="@+id/eventCreation-latitudeTEMP"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="27dp"
-        android:layout_marginEnd="8dp"
-        android:text="Latitude"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="75dp"
+        android:layout_marginStart="74dp"
+        android:hint="Latitude"
         app:layout_constraintBottom_toTopOf="@+id/eventCreation-eventDescription"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintEnd_toStartOf="@+id/eventCreation-LongitudeTEMP"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/eventCreation-eventDate"
+        app:layout_constraintVertical_bias="1.0" />
 
     <EditText
         android:id="@+id/eventCreation-LongitudeTEMP"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="8dp"
-        android:text="Longitude"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        android:layout_marginEnd="73dp"
+        android:layout_marginStart="75dp"
+        android:layout_marginTop="16dp"
+        android:hint="Longitude"
+        app:layout_constraintBottom_toTopOf="@+id/eventCreation-eventDescription"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/eventCreation-latitudeTEMP"
+        app:layout_constraintTop_toBottomOf="@+id/eventCreation-eventTime"
+        app:layout_constraintVertical_bias="1.0" />
 
     <Button
         android:id="@+id/eventCreation-ConfirmBTN"
