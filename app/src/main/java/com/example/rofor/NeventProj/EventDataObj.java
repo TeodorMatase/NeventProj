@@ -33,7 +33,7 @@ public class EventDataObj {
     String weatherTemperature;
     String weatherPOP;
     String creatorEmail;
-    String eventKey;
+    String eventKey; //time to leave
     ArrayList<String> attendeeEmails;
     LatLng EventLocation;
 

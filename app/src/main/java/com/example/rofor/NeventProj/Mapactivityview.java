@@ -18,6 +18,7 @@ import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.MapFragment;
 import com.google.android.gms.maps.OnMapReadyCallback;
+import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 
@@ -45,6 +46,8 @@ public class Mapactivityview extends AppCompatActivity implements OnMapReadyCall
             }
         });
 
+
+
         /*if(GMSAvailable()){
             setContentView(R.layout.activity_mapactivityview);
             createMap();
@@ -71,8 +74,8 @@ public class Mapactivityview extends AppCompatActivity implements OnMapReadyCall
     }
 
     private void createMap() {
-        MapFragment mapFrag = (MapFragment)getFragmentManager().findFragmentById(R.id.mapFragment);
-        mapFrag.getMapAsync(this);
+     //   MapFragment mapFrag = (MapFragment)getFragmentManager().findFragmentById(R.id.mapFragment);
+     //   mapFrag.getMapAsync(this);
     }
 
     public boolean GMSAvailable(){

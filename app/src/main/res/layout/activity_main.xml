@@ -28,31 +28,27 @@
             android:visibility="visible"/>
 
 
-        <Button
-            android:id="@+id/MapsBtn"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Map UI" />
+
 
         <Button
             android:id="@+id/EventListBtn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:onClick="LaunchEventList"
-            android:text="Event List UI" />
+            android:text="Event List" />
 
         <Button
             android:id="@+id/CalendarBtn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:onClick="LaunchCalendar"
-            android:text="Calendar UI" />
+            android:text="Calendar" />
 
         <Button
             android:id="@+id/EventCreationBtn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:onClick="LaunchEventCreation"
-            android:text="Event Creation UI" />
+            android:text="Event Creation" />
     </LinearLayout>
 </android.support.constraint.ConstraintLayout>

@@ -13,7 +13,7 @@ public class EventListObj {
         allEvents = new ArrayList<>();
     };
 
-    public static EventListObj getInstance() {
+    public synchronized static EventListObj getInstance() {
         if (INSTANCE == null) {
             INSTANCE = new EventListObj();
         }
@@ -39,5 +39,9 @@ public class EventListObj {
 
     public int size(){
         return allEvents.size();
+    }
+
+    public void setList(ArrayList<EventDataObj> newList){
+        this.allEvents = newList;
     }
 }

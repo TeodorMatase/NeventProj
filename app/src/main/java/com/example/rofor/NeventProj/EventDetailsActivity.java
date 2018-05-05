@@ -1,5 +1,6 @@
 package com.example.rofor.NeventProj;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -18,12 +19,21 @@ public class EventDetailsActivity extends AppCompatActivity {
     EventDataObj currentEvent;
     ListView invitedList;
     ArrayAdapter<String> adapter;
+    static int position2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_event_details);
         Bundle extras = getIntent().getExtras();
+        Button mapbtn = findViewById(R.id.MapsBtn);
+        mapbtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                LaunchMaps(view);
+            }
+        });
+
         invitedList = findViewById(R.id.attendeeListDetails);
         Button invbtn = findViewById(R.id.inviteAttendeeBtn);
         invbtn.setOnClickListener(new View.OnClickListener() {
@@ -34,6 +44,7 @@ public class EventDetailsActivity extends AppCompatActivity {
         });
         if( extras != null){
             position = extras.getInt("Position");
+            position2 = position;
         }
         adapter = new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1,EventListObj.getInstance().getEvent(position).attendeeEmails);
 
@@ -96,5 +107,10 @@ public class EventDetailsActivity extends AppCompatActivity {
             Toast.makeText(getBaseContext(),"Only Event Creator can invite other people to the event.", Toast.LENGTH_LONG).show();
         }
         invited.setText("");
+    }
+
+    public void LaunchMaps(View view){
+        Intent intent = new Intent(this, MapsActivity.class);
+        startActivity(intent);
     }
 }
